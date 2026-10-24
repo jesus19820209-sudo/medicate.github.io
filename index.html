@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f0e8">
+<title>教師靜心抽卡｜在書中尋得微光</title>
+<style>
+:root{--ink:#3f4944;--muted:#7b827a;--paper:#fffdf9;--rose:#d9a69b;--sage:#a8b8a4;--gold:#d8bd82;--lav:#c4b8d8;--blue:#a9c5cf}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;background:radial-gradient(ellipse at 12% 5%,#f5dfd5 0,transparent 34%),radial-gradient(ellipse at 92% 15%,#e3e8dc 0,transparent 30%),linear-gradient(145deg,#fbf6ef,#f3eee8);overflow-x:hidden}
+body:before,body:after{content:"✦";position:fixed;color:#d7bd83;opacity:.45;font-size:24px;pointer-events:none}body:before{top:12%;left:5%}body:after{right:6%;bottom:10%;font-size:32px}
+main{max-width:1120px;margin:auto;padding:48px 22px 38px}
+.hero{text-align:center;padding:10px 0 28px}
+.eyebrow{font-size:.78rem;letter-spacing:.24em;color:#8d9386;margin-bottom:13px}
+h1{font-family:"Noto Serif TC","Songti TC",serif;font-size:clamp(2rem,5vw,3.25rem);letter-spacing:.12em;margin:0;color:#46564d;font-weight:600}
+.subtitle{font-size:clamp(.95rem,2vw,1.1rem);letter-spacing:.06em;line-height:1.9;color:#737c72;margin:14px 0 8px}
+.instruction{font-size:.88rem;color:#9a8e80;margin:8px 0 0}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0 26px}
+button{font:inherit;cursor:pointer}
+.action{border:1px solid #d9d0c4;background:#fffaf4;color:#58665b;padding:10px 18px;border-radius:999px;transition:.2s;box-shadow:0 3px 10px #6c59400a}
+.action:hover{transform:translateY(-2px);background:#fff}
+.counter{font-size:.85rem;color:#8c9188;margin-bottom:16px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{height:270px;perspective:1000px;outline:none}
+.card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1);cursor:pointer}
+.card.flipped .card-inner{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;border-radius:18px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 8px 22px #63574612;border:1px solid #ffffffc9}
+.front{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;background:linear-gradient(145deg,var(--tone),#fffdf9 85%);isolation:isolate}
+.front:before{content:"";position:absolute;inset:9px;border:1px solid #ffffffb8;border-radius:12px;z-index:-1}
+.front:after{content:"✧";font-size:40px;color:#fffdf6;position:absolute;top:12px;right:18px;opacity:.9}
+.number{font-size:.75rem;letter-spacing:.2em;color:#6d796e;margin-bottom:22px}
+.card-symbol{font-size:36px;line-height:1;margin-bottom:16px;color:#fffdf8;text-shadow:0 2px 7px #7d746033}
+.front-label{font-family:"Noto Serif TC","Songti TC",serif;letter-spacing:.14em;font-size:1.04rem;color:#59665b}
+.tap{position:absolute;bottom:20px;font-size:.75rem;letter-spacing:.12em;color:#8e9589}
+.back{transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center;padding:24px 22px;background:#fffdf9;text-align:center;border-color:#e9e1d7}
+.back:before{content:"“";font-family:Georgia,serif;position:absolute;top:8px;left:15px;font-size:52px;color:var(--tone);opacity:.85;line-height:1}
+.quote{font-family:"Noto Serif TC","Songti TC",serif;font-size:1rem;line-height:1.85;color:#49564d;margin:5px 0 16px;overflow-wrap:anywhere}
+.book{font-size:.78rem;line-height:1.65;color:#8d8276;margin-top:auto}
+.book strong{font-weight:600;color:#68776a}
+.footer{text-align:center;color:#9b9489;font-size:.78rem;margin-top:32px;line-height:1.8}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#46564d;color:white;padding:11px 18px;border-radius:999px;font-size:.88rem;opacity:0;transition:.25s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{height:265px}}
+@media(max-width:620px){main{padding:34px 15px 28px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{height:260px}.back{padding:20px 15px}.quote{font-size:.94rem;line-height:1.75}.front-label{font-size:.95rem}}
+@media(max-width:360px){.grid{grid-template-columns:1fr 1fr}.card{height:250px}.front-label{font-size:.88rem}}
+@media(prefers-reduced-motion:reduce){.card-inner{transition:none}*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow">A LITTLE LIGHT FOR TEACHERS</div>
+    <h1>教師靜心抽卡</h1>
+    <p class="subtitle">在書中尋得微光和指引，為生活增添動力。</p>
+    <p class="instruction">讓心慢下來，憑直覺選一張牌。今天的你，也值得被好好照顧。</p>
+  </header>
+  <div class="actions">
+    <button class="action" id="drawBtn" type="button">✧ 為我抽一張</button>
+    <button class="action" id="shuffleBtn" type="button">↻ 重新排列</button>
+    <button class="action" id="resetBtn" type="button">收起所有牌卡</button>
+  </div>
+  <div class="counter" id="counter" aria-live="polite">14 張微光牌卡・點擊任一張，翻開今日的提醒</div>
+  <section class="grid" id="cards" aria-label="教師靜心金句牌卡"></section>
+  <footer class="footer">願你在忙碌的日常裡，仍記得留一點溫柔給自己。<br>每一次停下來照顧自己，都是重要的一步。</footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const quotes = [
+{q:"世上沒有速成的幸福，因為幸福是生活的軌跡。",b:"《你的人生，他們六個說了算！決定你一生的六種物質》",a:"David JP Phillips"},
+{q:"為此時此刻點上最閃亮的聚光燈吧！",b:"《被討厭的勇氣》",a:"岸見一郎"},
+{q:"時間比金錢寶貴，而專注力又比時間更寶貴，「專注在哪裡，力量就在哪裡」。",b:"《內在原力》",a:"愛瑞克"},
+{q:"如果你能用戀愛的心情去工作，那就會是全世界上最棒的工作。",b:"《工作的方法》",a:"稻盛和夫"},
+{q:"你說的每句話，都是對人生下的預言。",b:"《讓好事發生的說話習慣》",a:"吳秀香"},
+{q:"快樂、愛、熱情，都不是你從外在找到的東西，而是你內心做的選擇。",b:"《納瓦爾寶典》",a:"艾瑞克．喬根森"},
+{q:"你看見我，照亮我，我就綻放如花。",b:"《深刻認識一個人》",a:"大衛．布魯克斯"},
+{q:"你是你，無人可取代，和一個星球或是一朵花一樣，都是宇宙間獨一無二的存在，親愛的，這才是你的價值。",b:"《朵朵小語》",a:"彭樹君"},
+{q:"微物之美，小事之愛，正是這些，成就日子的可愛。生活許多時候，都不過尋找有光的地方。",b:"《如果理想生活還在半路》",a:"柯采岑"},
+{q:"人生沒有白讀的書，那些你以為遺忘的字句，終將在未來的某個迷茫時刻，成為指引你的微光。",b:"《給未來的讀者》",a:"李慧貞"},
+{q:"讓該走的人走，把位置空出來，留給真正在乎你的人。",b:"《只要好好過日子》",a:"阿飛"},
+{q:"想改變他人，不如先安頓自己。",b:"《別對每件事有反應》",a:"枡野俊明"},
+{q:"一輩子很短，要嘛有趣，要嘛老去，在有限的人生裡，做一個有趣的人。",b:"《人生很短，我決定活得有趣：知趣、識趣、有趣的37種生活詩意》",a:"李冰"},
+{q:"你的每一個行動，都是在為你想成為的那個人投票。",b:"《原子習慣》",a:"詹姆斯．克利爾"}
+];
+const tones=["#d9aaa0","#b9c8b1","#d8c5a0","#b9cbd0","#c9b9d9","#e4c6a5","#b8c7b5","#d9b8b5","#c2c8df","#dfcba9","#c3d2c5","#d7c3b0","#c9b9cf","#b4cbd0"];
+const symbols=["☼","✦","✧","❋","♡","☾","✿","❀","☼","✧","♡","❋","✦","✿"];
+let deck=quotes.map((item,i)=>({...item,id:i}));let opened=new Set();
+const grid=document.getElementById("cards"),counter=document.getElementById("counter"),toast=document.getElementById("toast");
+function render(){grid.innerHTML="";deck.forEach((item,index)=>{const card=document.createElement("article");card.className="card"+(opened.has(item.id)?" flipped":"");card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label",`第 ${item.id+1} 張牌卡，${opened.has(item.id)?"已翻開":"點擊翻開"}`);card.innerHTML=`<div class="card-inner"><div class="card-face front" style="--tone:${tones[item.id]}"><div class="number">CARD ${String(item.id+1).padStart(2,"0")}</div><div class="card-symbol">${symbols[item.id]}</div><div class="front-label">給自己的微光</div><div class="tap">點擊・翻開</div></div><div class="card-face back" style="--tone:${tones[item.id]}"><div class="quote"></div><div class="book"><strong></strong><br><span></span></div></div></div>`;card.querySelector(".quote").textContent=item.q;card.querySelector(".book strong").textContent=item.b;card.querySelector(".book span").textContent=item.a;const flip=()=>{if(opened.has(item.id))opened.delete(item.id);else opened.add(item.id);card.classList.toggle("flipped",opened.has(item.id));card.setAttribute("aria-label",`第 ${item.id+1} 張牌卡，${opened.has(item.id)?"已翻開":"點擊翻開"}`);updateCounter()};card.addEventListener("click",flip);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}});grid.appendChild(card)});updateCounter()}
+function updateCounter(){counter.textContent=opened.size?`已翻開 ${opened.size} / 14 張牌卡・每一句話，都可以成為此刻的陪伴`:"14 張微光牌卡・點擊任一張，翻開今日的提醒"}
+function notify(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2200)}
+document.getElementById("drawBtn").addEventListener("click",()=>{const unopened=deck.filter(x=>!opened.has(x.id));if(!unopened.length){notify("所有牌卡都已翻開，願微光陪伴你。");return}const pick=unopened[Math.floor(Math.random()*unopened.length)];opened.add(pick.id);render();const el=[...grid.children].find(x=>x.getAttribute("aria-label").includes(`第 ${pick.id+1} 張`));if(el){el.classList.add("flipped");el.scrollIntoView({behavior:"smooth",block:"center"})}notify("這是此刻送給你的微光 ✧")});
+document.getElementById("shuffleBtn").addEventListener("click",()=>{for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}render();notify("牌卡已重新排列，跟著直覺選一張吧。")});
+document.getElementById("resetBtn").addEventListener("click",()=>{opened.clear();render();notify("牌卡已收起，讓心重新歸零。")});
+render();
+</script>
+</body>
+</html>
